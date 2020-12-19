@@ -5,8 +5,8 @@ class Weather {
     }
 
     async responseWeatherSearchRobot (req, res) {
-            const weather_ = await weather.weatherSearchRobot( req.body.local );
-            res.json(weather_);
+        const weather_ = await weather.weatherSearchRobot( req.body.local );
+        res.json(weather_);
     }
 }
 
