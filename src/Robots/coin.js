@@ -18,7 +18,12 @@ class RobotCurrency {
         });
         await browser.close();
 
-        return currencyOfConverter;
+        return this.formatedString(currencyOfConverter, x, y);
+    }
+
+    formatedString (coins, searchBefore, searchAfter) {
+        return `O valor para cada ${coins.searchCurrency}, ${ searchBefore } 
+        é igual a ${ coins.CurrencyOfSearch }, ${ searchAfter }`
     }
     
 }
