@@ -19,6 +19,12 @@ app.get('/weather', async (req, res) => {
 	const weather_ = await weather.weatherSearchRobot( req.body.local );
 	res.json(weather_);
 });
+
+app.get('/for', async (req, res) => {
+	const weather_ = await weather.metodoTeste();
+	res.json(weather_);
+});
+
 	
 app.listen(3000, () => {
 	console.log(`subiu na porta ${3000}; para acessar click -> http://localhost:3000`, );
