@@ -5,10 +5,10 @@ class RobotCurrency {
 
     }
 
-    async CurrencyConverterTo(x,y) {
+    async CurrencyConverterTo(searchBefore,searchAfter) {
         const browser = await p.launch({ headless : true });
         const page = await browser.newPage();
-        const url = `https://www.google.com/search?q=${x}+para+${y}&oq=${x}+para+${y}&aqs=chrome..69i57j0i10i131i433j0i10l6.2706j1j7&sourceid=chrome&ie=UTF-8`;
+        const url = `https://www.google.com/search?q=${searchBefore}+para+${searchAfter}&oq=${searchBefore}+para+${searchAfter}&aqs=chrome..69i57j0i10i131i433j0i10l6.2706j1j7&sourceid=chrome&ie=UTF-8`;
         await page.goto(url);
         const currencyOfConverter = await page.evaluate(() => {
             return {
@@ -18,7 +18,7 @@ class RobotCurrency {
         });
         await browser.close();
 
-        return this.formatedString(currencyOfConverter, x, y);
+        return this.formatedString(currencyOfConverter, searchBefore, searchAfter);
     }
 
     formatedString (coins, searchBefore, searchAfter) {
