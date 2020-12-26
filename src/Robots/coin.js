@@ -16,9 +16,9 @@ class RobotCurrency {
                 CurrencyOfSearch: document.querySelector('.a61j6.vk_gy.vk_sh.Hg3mWc').value
             }
         });
-        
+        await browser.close();
+
         return this.formatedString(currencyOfConverter, searchBefore, searchAfter);
-        // await browser.close();
     }
 
     formatedString (coins, searchBefore, searchAfter) {

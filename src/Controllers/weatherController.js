@@ -1,4 +1,4 @@
-const weather = require('../Robots/weather.js');
+const weather = require('../Robots/weather');
 class Weather {
     constructor () {
 
