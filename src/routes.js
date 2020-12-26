@@ -16,5 +16,6 @@ routes.post('/', coinController.reponseOfCoin);
 routes.get('/', weatherController.responseWeatherSearchRobot);
 
 routes.post('/outlay', outlayController.store);
+routes.get('/outlay', outlayController.index);
 
 module.exports = routes;
