@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "moon": "nodemon ./serve.js -w"
+    "mocha": "mocha -w",
+    "upServer": "nodemon ./server.js -w"
   },
   "keywords": [],
   "author": "",
