@@ -6,7 +6,7 @@ class RobotWeather {
     }
     
     async weatherSearchRobot(x) {
-        const browser = await p.launch({ handless : false});
+        const browser = await p.launch({ handless : false });
         const page = await browser.newPage();
         const url = `https://www.google.com/search?ei=gqLZX73EGN3C5OUPgPqAqAM&q=temperatura+em+${x}&oq=tempera`
         await page.goto(url);
@@ -27,7 +27,7 @@ class RobotWeather {
         const url = `https://www.google.com/search?ei=gqLZX73EGN3C5OUPgPqAqAM&q=temperatura+em+manaus&oq=tempera`;
         await page.goto(url);
 
-        const teste = await page.evaluate(() => {
+        await page.evaluate(() => {
             const limp = document.querySelector('.mod').getElementsByTagName('span');
                 for(i=0; i< 11; i++ ) {
                     console.log(limp[i].textContent)
