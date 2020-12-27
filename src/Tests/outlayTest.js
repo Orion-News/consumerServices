@@ -38,7 +38,7 @@ describe('pequenos testes para desembolsar', () => {
             category: "mecanic",
             spent: "30,00",
             date: "29/11/2020"
-        }
+        };
     
         const newObj = {
   	        id: "1",    
@@ -46,11 +46,11 @@ describe('pequenos testes para desembolsar', () => {
             category: "mecanic",
             spent: "30,00",
             date: "29/11/2020"
-        }
+        };
     
-        await outlayService.update(expected.id, newObj)
-        const showExpectedItem = await outlayService.show(expected.id)
+        await outlayService.update(expected.id, newObj);
+        const showExpectedItem = await outlayService.show(expected.id);
     
-        deepEqual(showExpectedItem, expected)
-        })
+        deepEqual(showExpectedItem, expected);
+        });
 });
