@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "mocha": "mocha -w",
-    "upServer": "nodemon ./server.js -w"
+    "upServer": "nodemon ./server.js -w",
+    "testOutlay" : "mocha src/Tests/outlayTest.js"
   },
   "keywords": [],
   "author": "",
