@@ -1,4 +1,5 @@
 const { deepEqual, ok } = require('assert');
+const outlayServices = require('../Services/outlayServices.js');
 const outlayService = require('../Services/outlayServices.js');
 
 const default_file_expected_register = {
@@ -11,7 +12,17 @@ const default_file_expected_register = {
 	}
 };
 
-describe('pequenos testes para desembolsar', () => {
+const default_file_expected_updated = {
+    "data" : {
+        "id" : "1",    
+        "title" : "pneu",
+        "category" : "mecanic",
+        "spent" : "30,00",
+        "date" : "29/11/2020"
+    }
+};
+
+describe('pequenos testes para desembolsar SERVICES', () => {
     
     it('cadastrar um gasto', async () => {
         const expectedItem = default_file_expected_register;
@@ -22,7 +33,7 @@ describe('pequenos testes para desembolsar', () => {
         ok(insertItemExpected, showExpectedItem, expectedItem);
     });
 
-    it('deve listar um gasto', async ()=>{
+    it('deve listar um gasto', async () => {
         const expected = default_file_expected_register.data;
 
         const showExpectedItem = await outlayService.show(expected.id);
@@ -30,27 +41,21 @@ describe('pequenos testes para desembolsar', () => {
         deepEqual(showExpectedItem, expected);
     });
 
-
-    it('deve atualizar um gasto pelo id', async ()=> {
-        const expected = {
-            id: "1",    
-            title: "pneu",
-            category: "mecanic",
-            spent: "30,00",
-            date: "29/11/2020"
-        };
+    it('deve atualizar um gasto pelo id', async () => {
+        const expected = default_file_expected_updated;
     
-        const newObj = {
-  	        id: "1",    
-            title: "pneu",
-            category: "mecanic",
-            spent: "30,00",
-            date: "29/11/2020"
-        };
+        const newObj = default_file_expected_updated;
     
         await outlayService.update(expected.id, newObj);
         const showExpectedItem = await outlayService.show(expected.id);
     
         deepEqual(showExpectedItem, expected);
-        });
+    });
+
+    it('deve deletar um gasto pelo id', async () => {
+        const expected = "Item Deletado";
+        const { data } = default_file_expected_register;
+        const deleteExpectedItem = await outlayServices.destroy(data.id);
+        ok(deleteExpectedItem, expected);
+    });
 });
