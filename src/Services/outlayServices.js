@@ -25,14 +25,14 @@ class outlayService {
         const ItemIndex = dataBase.findIndex(x => x.id === id);
         dataBase.splice(ItemIndex, 1);
         dataBase.push(updateItem);
-        const updatedItem = dataBase.find(x => x.id === updateItem.id)
+        const updatedItem = dataBase.find(x => x.id === updateItem.id);
         return updatedItem ? `Atualizado com sucesso` : `Deu ruim ao atualizar`;
     }
 
     async destroy (id) {
         const destroys = dataBase.findIndex(x => x.id === id);
         const del = dataBase.splice(destroys, 1);
-        return del ? `Item Deletado` : `berrou ao remover`
+        return del ? `Item Deletado` : `berrou ao remover`;
     }
 }
 
