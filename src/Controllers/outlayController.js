@@ -1,4 +1,3 @@
-const { param } = require('../routes.js');
 const outlayServices = require('../Services/outlayServices.js');
 
 class outlayController {
@@ -7,18 +6,30 @@ class outlayController {
     }
 
     async store (request, response) {
-        const dataStore = await outlayServices.store(request.body.data);
-        response.json(dataStore);
+        try {
+            const dataStore = await outlayServices.store(request.body.data);
+            response.json(dataStore);
+        } catch (e) {
+            throw new Error(e);
+        }
     }
 
     async index (request, response) {
-        const indexData = await outlayServices.index();
-        response.json(indexData);
+        try {
+            const indexData = await outlayServices.index();
+            response.json(indexData);
+        } catch (e) {
+            throw new Error(e);
+        }
     }
 
     async show (request, response) {
-        const showData = await outlayServices.show(request.params.id);
-        response.json(showData);
+        try {
+            const showData = await outlayServices.show(request.params.id);
+            response.json(showData);
+        } catch (e) {
+            throw new Error(e);
+        }
     }
 
     async update (request, response) {
@@ -27,13 +38,17 @@ class outlayController {
             const dataUpdate = await outlayServices.update(request.params.id, data);
             response.json(dataUpdate);
         } catch (e) {
-            throw new Error (e);
+            throw new Error(e);
         }
     }
 
     async destroy (request, response) {
-        const dataDestroy = await outlayServices.destroy(request.params.id);
-        response.json(dataDestroy);
+        try {
+            const dataDestroy = await outlayServices.destroy(request.params.id);
+            response.json(dataDestroy);
+        } catch (e) {
+            throw new Error(e);
+        }
     }
 }
 
