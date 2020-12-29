@@ -1,5 +1,4 @@
 const { deepEqual, ok } = require('assert');
-const outlayServices = require('../Services/outlayServices.js');
 const outlayService = require('../Services/outlayServices.js');
 
 const default_file_expected_register = {
@@ -55,7 +54,7 @@ describe('pequenos testes para desembolsar SERVICES', () => {
     it('deve deletar um gasto pelo id', async () => {
         const expected = "Item Deletado";
         const { data } = default_file_expected_register;
-        const deleteExpectedItem = await outlayServices.destroy(data.id);
+        const deleteExpectedItem = await outlayService.destroy(data.id);
         ok(deleteExpectedItem, expected);
     });
 });
