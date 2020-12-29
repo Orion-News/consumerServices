@@ -10,12 +10,10 @@ routes.get('/', (request, response) => {
 });
 
 // routes of robot coin
-routes.post('/', coinController.reponseOfCoin);
-
+routes.post('/coins', coinController.reponseOfCoin);
 
 // routes of robot weather
-routes.get('/', weatherController.responseWeatherSearchRobot);
-
+routes.get('/weather', weatherController.responseWeatherSearchRobot);
 
 // routes from C.R.U.D Outlay;
 routes.post('/outlay', outlayController.store);
