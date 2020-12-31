@@ -1,4 +1,3 @@
-
 class App {
 	constructor () {
 		this.express = require('express')();
@@ -6,7 +5,7 @@ class App {
 	}
 
 	routes () {
-		this.express.use(require('./src/routes'));
+		this.express.use(require('./src/App/routes'));
 	}
 
 }
