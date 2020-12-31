@@ -4,6 +4,8 @@ const weatherController = require('./Controllers/weatherController.js');
 const outlayController = require('./Controllers/outlayController.js');
 const routes = express.Router();
 
+routes.use(express.json());
+
 // API HOME SERVER send from DOCs
 routes.get('/', (request, response) => {
     return response.json({ Message : 'Hello Welcome, Choose a routes! ' });
