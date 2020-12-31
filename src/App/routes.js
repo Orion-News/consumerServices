@@ -19,7 +19,7 @@ routes.post('/coins', coinController.reponseOfCoin);
 routes.get('/weather', weatherController.responseWeatherSearchRobot);
 
 // routes from C.R.U.D User;
-reoutes.post('/register', userController.store);
+// routes.post('/register', userController.store);
 
 // routes from C.R.U.D Outlay;
 routes.post('/outlay', outlayController.store);
