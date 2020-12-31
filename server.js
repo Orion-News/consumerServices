@@ -1,11 +1,14 @@
 
-const express = require('express');
-const routes = require('./src/routes');
+class App {
+	constructor () {
+		this.express = require('express')();
+		this.routes();
+	}
 
-const app = express();
-app.use(express.json());
-app.use(routes);
+	routes () {
+		this.express.use(require('./src/routes'));
+	}
 
-app.listen(3000, () => {
-	console.log(`subiu na porta ${3000}; para acessar click -> http://localhost:${3000}`, );
-});
+}
+
+module.exports = new App().express;
