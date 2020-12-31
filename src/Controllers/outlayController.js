@@ -1,5 +1,5 @@
 const outlayServices = require('../Services/outlayServices.js');
-
+const generateItem = require('../Config/functionLoca.js');
 class outlayController {
     constructor() {
 
@@ -7,8 +7,9 @@ class outlayController {
 
     async store (request, response) {
         try {
-            const dataStore = await outlayServices.store(request.body.data);
-            response.json(dataStore);
+            const dataStore = generateItem.returnObjectInsert(request.body.data);
+            const returnStore = await outlayServices.store(dataStore);
+            response.json(returnStore);
         } catch (e) {
             throw new Error(e);
         }
