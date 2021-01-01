@@ -1,6 +1,6 @@
 const outlayServices = require('../Services/outlayServices.js');
 const generateItem = require('../../Config/functionLoca.js');
-class outlayController {
+class OutlayController {
     constructor() {
 
     }
@@ -53,4 +53,4 @@ class outlayController {
     }
 }
 
-module.exports = new outlayController();
+module.exports = new OutlayController();
