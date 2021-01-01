@@ -5,8 +5,12 @@ class Weather {
     }
 
     async responseWeatherSearchRobot (req, res) {
-        const weather_ = await weather.weatherSearchRobot( req.body.local );
-        res.json(weather_);
+        try{
+            const weather_ = await weather.weatherSearchRobot( req.body.local );
+            res.json(weather_);
+        } catch (e) {
+            throw new Error(e);
+        }
     }
 }
 
