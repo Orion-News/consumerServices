@@ -6,13 +6,14 @@
   "scripts": {
     "mocha": "mocha -w",
     "upServer": "nodemon ./index.js -w",
-    "testOutlay" : "mocha src/Tests/outlayTest.js"
+    "testOutlay": "mocha src/Tests/outlayTest.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.11.9",
     "nodemon": "^2.0.6",
     "puppeteer": "^5.5.0"
   }
