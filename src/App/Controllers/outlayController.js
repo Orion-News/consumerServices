@@ -11,16 +11,15 @@ class OutlayController {
             const returnStore = await outlayServices.store(dataStore);
             response.json(returnStore);
         } catch (e) {
-            throw new Error(e);
+            return response.status(404).send({ "Unable to authenticate user" : `${e}`});
         }
     }
 
     async index (request, response) {
         try {
-            const indexData = await outlayServices.index();
-            response.json(indexData);
+            response.json(await outlayServices.index());
         } catch (e) {
-            throw new Error(e);
+            return response.status(404).send({ "Unable to authenticate user" : `${e}`});
         }
     }
 
@@ -29,7 +28,7 @@ class OutlayController {
             const showData = await outlayServices.show(request.params.id);
             response.json(showData);
         } catch (e) {
-            throw new Error(e);
+            return response.status(404).send({ "Unable to authenticate user" : `${e}`});
         }
     }
 
@@ -39,7 +38,7 @@ class OutlayController {
             const dataUpdate = await outlayServices.update(request.params.id, data);
             response.json(dataUpdate);
         } catch (e) {
-            throw new Error(e);
+            return response.status(404).send({ "Unable to authenticate user" : `${e}`});
         }
     }
 
@@ -48,7 +47,7 @@ class OutlayController {
             const dataDestroy = await outlayServices.destroy(request.params.id);
             response.json(dataDestroy);
         } catch (e) {
-            throw new Error(e);
+            return response.status(404).send({ "Unable to authenticate user" : `${e}`});
         }
     }
 }
