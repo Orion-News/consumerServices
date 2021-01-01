@@ -18,12 +18,15 @@ routes.post('/coins', coinController.reponseOfCoin);
 // routes of robot weather
 routes.get('/weather', weatherController.responseWeatherSearchRobot);
 
-// routes from C.R.U.D User;
+// routes from register and login;
+routes.post('/login', userController.Auth_);
 routes.post('/register', userController.store);
+
+// routes from C.R.U.D User;
+routes.get('/user/:id', userController.show);
 
 // routes from C.R.U.D Outlay;
 routes.post('/outlay', outlayController.store);
-routes.get('/outlay/:id', outlayController.show);
 routes.put('/outlay/:id', outlayController.update);
 routes.delete('/outlay/:id', outlayController.destroy);
 routes.get('/outlay', outlayController.index);
