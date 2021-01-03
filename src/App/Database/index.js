@@ -9,4 +9,5 @@ const connection = mongoose.connection;
 connection.once("open", function() {
   console.log("MongoDB database conectado com sucesso! na porta padrão", url);
 });
+
 module.exports = mongoose;
