@@ -1,6 +1,8 @@
 const User = require('../Database/Models/user.js');
 const bcrypt = require('bcryptjs');
+
 class userServices {
+    
     async store (data) {
         const user = await User.create(data);
         user.password = undefined;
