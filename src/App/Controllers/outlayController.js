@@ -45,7 +45,7 @@ class OutlayController {
     async destroy (request, response) {
         try {
             const dataDestroy = await outlayServices.destroy(request.params.id);
-            response.json(dataDestroy);
+            response.json(dataDestroy ? "Item removido com sucesso" : "Item não removido");
         } catch (e) {
             return response.status(404).send({ "An expense could not be deleted" : `${e}`});
         }
