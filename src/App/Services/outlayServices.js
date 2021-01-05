@@ -1,4 +1,4 @@
-const dataBase = [];
+const Outlay = require('../Database/Models/outlay');
 
 // adicionar await nos metodos ao adicionar db;
 class outlayService {
@@ -7,32 +7,23 @@ class outlayService {
     }
 
     async store (data) {
-        dataBase.push(data);
-        const baseInsertItens = dataBase.find(x => x.id === data.id);
-        return baseInsertItens ? `Registrado com sucesso` : `Deu ruim pra cadastrar`;
+        return await Outlay.create(data);
     }
 
     async index () {
-        return dataBase;
+        return await Outlay.find();;
     }
 
-    async show (id) {
-        const findItem = dataBase.find(x => x.id === id);
-        return findItem ? findItem : `Usuario não existe`;
+    async show (_id) {
+        return await Outlay.findById({ _id });
     }
 
     async update (id, updateItem) {
-        const ItemIndex = dataBase.findIndex(x => x.id === id);
-        dataBase.splice(ItemIndex, 1);
-        dataBase.push(updateItem);
-        const updatedItem = dataBase.find(x => x.id === updateItem.id);
-        return updatedItem ? `Atualizado com sucesso` : `Deu ruim ao atualizar`;
+        return await Outlay.findByIdAndUpdate(id, updateItem, { new : true });
     }
 
     async destroy (id) {
-        const destroys = dataBase.findIndex(x => x.id === id);
-        const del = dataBase.splice(destroys, 1);
-        return del ? `Item Deletado` : `berrou ao remover`;
+        return await Outlay.findByIdAndDelete(id);
     }
 }
 
