@@ -11,7 +11,7 @@ class OutlayController {
             const returnStore = await outlayServices.store(dataStore);
             response.json(returnStore);
         } catch (e) {
-            return response.status(404).send({ "Unable to authenticate user" : `${e}`});
+            return response.status(400).send({ "Unable to Outlay" : `${e}`});
         }
     }
 
@@ -19,7 +19,7 @@ class OutlayController {
         try {
             response.json(await outlayServices.index());
         } catch (e) {
-            return response.status(404).send({ "Unable to authenticate user" : `${e}`});
+            return response.status(404).send({ "Could not list your expenses" : `${e}`});
         }
     }
 
@@ -28,7 +28,7 @@ class OutlayController {
             const showData = await outlayServices.show(request.params.id);
             response.json(showData);
         } catch (e) {
-            return response.status(404).send({ "Unable to authenticate user" : `${e}`});
+            return response.status(404).send({ "Could not display Outlay" : `${e}`});
         }
     }
 
@@ -38,7 +38,7 @@ class OutlayController {
             const dataUpdate = await outlayServices.update(request.params.id, data);
             response.json(dataUpdate);
         } catch (e) {
-            return response.status(404).send({ "Unable to authenticate user" : `${e}`});
+            return response.status(404).send({ "Unable to update an expense" : `${e}`});
         }
     }
 
@@ -47,7 +47,7 @@ class OutlayController {
             const dataDestroy = await outlayServices.destroy(request.params.id);
             response.json(dataDestroy);
         } catch (e) {
-            return response.status(404).send({ "Unable to authenticate user" : `${e}`});
+            return response.status(404).send({ "An expense could not be deleted" : `${e}`});
         }
     }
 }
