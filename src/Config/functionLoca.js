@@ -12,11 +12,11 @@ class GenerateItem {
 
     returnObjectInsert (data) {
         return {
-            "id": this._id(),
             "title": data.title,
             "category": data.category,
             "spent": data.spent,
-            "date": data.date
+            "date": data.date,
+            "description": data.description
         }
     }
 }
