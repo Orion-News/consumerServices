@@ -31,6 +31,7 @@ routes.post('/outlay', outlayController.store);
 routes.put('/outlay/:id', outlayController.update);
 routes.delete('/outlay/:id', outlayController.destroy);
 routes.get('/outlay', outlayController.index);
+routes.get('/outlay/:id', outlayController.show);
 
 // router to Categories;
 routes.post('/category', categoryController.storeMany);
