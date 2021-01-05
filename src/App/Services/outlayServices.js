@@ -15,7 +15,7 @@ class outlayService {
     }
 
     async show (_id) {
-        return await Outlay.findById({ _id });
+        return await Outlay.findById(_id);
     }
 
     async update (id, updateItem) {
