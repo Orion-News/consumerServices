@@ -7,7 +7,8 @@ const ObjectId = Schema.Types.ObjectId;
 const outlayModel = new Schema({
 	user_id: {
 		type: ObjectId,
-		ref: 'User'
+		ref: 'User',
+		required: true,
 	},
 	title: {
 		type: String,
