@@ -1,4 +1,4 @@
-const coin = require('../../Robots/coin.js');
+import coin from '../../Robots/coin.js';
 
 class Coin {
     async reponseOfCoin (request, response) {
