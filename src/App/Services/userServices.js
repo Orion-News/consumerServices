@@ -1,5 +1,6 @@
 const User = require('../Database/Models/user.js');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 class userServices {
     
@@ -21,6 +22,8 @@ class userServices {
         if (!await bcrypt.compare(password, searchUser.password)) throw new Error(`Invalid Password`);
 
         searchUser.password = undefined;
+
+        const token = jwt.sign({ id : searchUser._id }, 'secret-token')
 
         return searchUser;
     }
