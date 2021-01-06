@@ -1,5 +1,5 @@
-const { deepEqual, ok } = require('assert');
-const outlayService = require('../App/Services/outlayServices.js');
+import { deepEqual, ok } from 'assert';
+import outlayService from '../App/Services/outlayServices.js';
 
 const default_file_expected_register = {
 	"data" : {
