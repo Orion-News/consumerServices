@@ -1,4 +1,4 @@
-const p = require('puppeteer');
+import p from 'puppeteer';
 
 class RobotCurrency {
     constructor() {
