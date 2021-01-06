@@ -1,5 +1,5 @@
-const { deepEqual, ok } = require('assert');
-const weatherRobots = require('../Robots/weather');
+import { deepEqual, ok } from 'assert';
+import weatherRobots from '../Robots/weather';
 // variaveis para testes em busca da temperatura atual
 const noContentAlreadyExpected = 'Fernando de noronha';
 
