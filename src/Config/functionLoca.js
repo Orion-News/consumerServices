@@ -12,6 +12,7 @@ class GenerateItem {
 
     returnObjectInsert (data) {
         return {
+            "user_id" : data.user_id,
             "title": data.title,
             "category": data.category,
             "spent": data.spent,
@@ -19,6 +20,7 @@ class GenerateItem {
             "description": data.description
         }
     }
+    
 }
 
 module.exports = new GenerateItem();
