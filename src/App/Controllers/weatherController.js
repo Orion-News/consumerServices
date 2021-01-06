@@ -1,4 +1,4 @@
-const weather = require('../../Robots/weather');
+import weather from '../../Robots/weather';
 class Weather {
     constructor () {
 
