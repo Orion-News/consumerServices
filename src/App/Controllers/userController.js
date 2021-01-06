@@ -1,4 +1,4 @@
-const userServices = require('../Services/userServices');
+import userServices from '../Services/userServices';
 
 class UserController {
     
