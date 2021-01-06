@@ -1,5 +1,5 @@
-const outlayServices = require('../Services/outlayServices.js');
-const generateItem = require('../../Config/functionLoca.js');
+import outlayServicesfrom from '../Services/outlayServices.js';
+import generateItem from '../../Config/functionLoca.js';
 class OutlayController {
     constructor() {
 
