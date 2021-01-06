@@ -1,11 +1,14 @@
+import express from 'express';
+import routes from './src/App/routes';
+
 class App {
 	constructor () {
-		this.express = require('express')();
+		this.express = express();
 		this.routes();
 	}
 
 	routes () {
-		this.express.use(require('./src/App/routes'));
+		this.express.use(routes);
 	}
 
 }
