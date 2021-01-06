@@ -1,9 +1,12 @@
-const express = require('express');
-const coinController = require('./Controllers/coinController.js');
-const weatherController = require('./Controllers/weatherController.js');
-const outlayController = require('./Controllers/outlayController.js');
-const userController = require('./Controllers/userController.js');
-const categoryController = require('./Controllers/categoryController.js');
+import express from 'express';
+import { 
+    coinController,
+    userController,
+    weatherController,
+    outlayController, 
+    categoryController 
+    } 
+from '../Config/importsControllers.js';
 const routes = express.Router();
 
 routes.use(express.json());
