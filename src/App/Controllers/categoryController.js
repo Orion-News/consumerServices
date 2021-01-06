@@ -1,4 +1,4 @@
-const Category = require('../Database/Models/categories');
+import Category from '../Database/Models/categories';
 
 class CategoryController {
 
