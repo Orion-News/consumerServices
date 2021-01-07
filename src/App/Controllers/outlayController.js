@@ -1,4 +1,4 @@
-import outlayServicesfrom from '../Services/outlayServices.js';
+import outlayServices from '../Services/outlayServices.js';
 import generateItem from '../../Config/functionLoca.js';
 class OutlayController {
     constructor() {
