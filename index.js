@@ -1,5 +1,4 @@
 import server from './server.js';
-
-server.listen(process.env.PORT || 3000, () => {
-    console.log(`subiu na porta ${3000}; para acessar click -> http://localhost:${3000}`);
+server.listen(process.env.PORT, () => {
+    console.log(`subiu na porta ${process.env.PORT}; para acessar click -> http://${process.env.DB_HOST}:${process.env.PORT}`);
 });
