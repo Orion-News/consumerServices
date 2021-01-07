@@ -2,16 +2,6 @@ import userServices from '../Services/userServices';
 
 class UserController {
     
-    async Auth_ (request, response) {
-        const { email, password } = request.body.data;
-        try{
-            const user = await userServices.Auth_(email, password);
-            response.json(user);
-        } catch (e) {
-            return response.status(401).send({ "Unable to authenticate user" : `${e}`});
-        }
-    }
-
     async store (request, response) {
         const { data } = request.body;
         try {
