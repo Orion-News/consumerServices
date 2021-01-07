@@ -1,5 +1,4 @@
-import Category from '../Database/Models/categories';
-
+import Category from '../Models/categories.js';
 class CategoryController {
 
     async storeMany (request, response) {
