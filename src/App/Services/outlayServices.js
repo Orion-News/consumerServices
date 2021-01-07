@@ -1,7 +1,7 @@
-const Outlay = require('../Database/Models/outlay');
+import Outlay from '../Models/outlay.js';
 
 // adicionar await nos metodos ao adicionar db;
-class outlayService {
+class outlayServices {
     constructor () {
 
     }
@@ -27,4 +27,4 @@ class outlayService {
     }
 }
 
-module.exports = new outlayService();
+module.exports = new outlayServices();
