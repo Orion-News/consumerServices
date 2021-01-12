@@ -1,4 +1,5 @@
 import coin from '../../Robots/coin.js';
+import mailTransport from '../../Mail/sendMail.js';
 
 class Coin {
     async reponseOfCoin (request, response) {
