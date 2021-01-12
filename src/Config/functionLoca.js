@@ -20,6 +20,15 @@ class GenerateItem {
             "description": data.description
         }
     }
+
+    acessLoginObjectSendEmail (info) {
+        return {
+            from: 'registryDriver@negrito.com.br',
+            to: 'gsouza@3xsolutions.com.br',
+            subject: 'Confirme E-mail',
+            text: `Seja bem-vindo confirme seu e-mail para conclcuir seu acesso ${info.token}`
+        }
+    }
     
 }
 
