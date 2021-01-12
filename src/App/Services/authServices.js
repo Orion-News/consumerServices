@@ -12,10 +12,7 @@ class Auth_ {
         if (!await bcrypt.compare(password, searchUser.password)) throw new Error(`Invalid Password`);
 
         searchUser.password = undefined;
-        const token = jwt.sign({ id : searchUser._id }, process.env.APP_SECRET, {
-            expiresIn : '2min'
-        })
-
+        
         return {
             data : searchUser,
             token : token
